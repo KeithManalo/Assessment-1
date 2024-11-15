@@ -1,0 +1,311 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* Define CSS Variables for color scheme */
+:root {
+    --content-bg: #ffffff; /* Background color for content sections */
+    --page-bg: #e9e9e9; /* Background color for the entire page */
+    --text-clr: #000000; /* Default text color */
+    --footer-bg: #14181d; /* Background color for footer */
+}
+
+/* General body styling */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--page-bg); /* Apply page background */
+    font-size: 1em; 
+    font-family: "Josefin Sans", serif; /* Set default font */
+}
+
+/* Header styles */
+header {
+    background-color: var(--page-bg); /* Set background for header */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+}
+
+/* Logo styling */
+header .logo { 
+    width: 80px;
+    height: 80px;
+    margin-bottom: 12px;
+    border-radius: 50%; /* Make logo circular */
+}
+
+header .logo svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Navigation styling */
+header .nav {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+}
+
+header .nav a {
+    text-decoration: none;
+    color: inherit;
+    padding: 8px;
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+header .nav a:hover {
+    color: #0260c4; /* Change color on hover */
+}
+
+/* Container styles */
+.container {
+    background-color: var(--content-bg); /* Set background color for content sections */
+}
+
+/* Paragraphs inside container */
+.container p {
+    font-size: 1em;
+    padding: 12px;
+}
+
+/* Heading styles */
+.container h1 {
+    font-family: "Protest Guerrilla", sans-serif; /* Apply special font */
+    text-align: center;
+    font-size: 2rem;
+    margin: 12px 0;
+}
+
+/* Image grid setup */
+.container .pics {
+    width: 100vw;
+    display: grid; /* Use CSS grid to display images */
+}
+
+.container .pics .big-pic {
+    display: none; /* Hide 'big-pic' images by default */
+}
+
+.container .pics img {
+    width: 100%;
+    height: auto; /* Ensure images are responsive */
+}
+
+/* Author section in "about" */
+.container .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .about .author-img {
+    width: 200px;
+    height: 200px;
+    margin-top: 12px;
+}
+
+.container .about .author-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Make author image circular */
+}
+
+.container .about .about-container p {
+    padding: 0 12px;
+}
+
+/* Footer styling */
+.container footer {
+    padding: 12px;
+    border-top: solid black 1px;
+    text-align: center;
+}
+
+.container footer p {
+    padding: 0;
+    margin: 0;
+}
+
+/* Media queries for responsive design */
+
+/* Medium screen devices (540px - 720px) */
+@media (min-width: 540px) and (max-width: 720px) {
+    .container p { padding: 20px; }
+    .container h1 {
+        font-family: "Protest Guerrilla", sans-serif;
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+    .container .about .author-img { margin-top: 20px; }
+    .container .about .about-container p { padding: 0 20px; }
+    .container footer { padding: 20px; }
+}
+
+/* Large screen devices (721px - 1024px) */
+@media (min-width: 721px) and (max-width: 1024px) {
+    body { background-color: var(--page-bg); }
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        width: 80%;
+        border: solid black 1.5px;
+    }
+    .container p { padding: 0 30px; }
+    .container h1 {
+        font-family: "Protest Guerrilla", sans-serif;
+        font-size: 2rem;
+        margin: 30px 0;
+    }
+    .container .pics {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .container .pics img {
+        width: 100%;
+        height: auto;
+    }
+    .container .about {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: end;
+        justify-content: center;
+        margin: 30px;
+    }
+    .container .about .author-img {
+        margin: 0;
+        width: 200px;
+        height: 200px;
+    }
+    .container .about .about-container {
+        width: 50vw;
+        margin: 30px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .container .about .about-container h1 { margin: 0; padding: 0; }
+    .container .about .about-container p {
+        margin: 0px;
+        padding: 0 30px;
+    }
+    .container footer { padding: 30px; }
+}
+
+/* Extra large screen devices (1025px and above) */
+@media (min-width: 1025px) {
+    body {
+        background-color: var(--page-bg); 
+        font-size: 1.5em;
+    }
+    #pic-1 { grid-area: pic1; }
+    #pic-2 { grid-area: pic2; }
+    #pic-3 { grid-area: pic3; }
+    #pic-4 { grid-area: pic4; }
+    #pic-5 { grid-area: pic5; }
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    header .logo {
+        width: 200px;
+        height: 200px;
+        margin: 50px 0;
+    }
+    header .nav {
+        font-size: 1em;
+        margin-bottom: 50px;
+    }
+    .container {
+        width: 80%;
+        border: solid black 1.5px;
+    }
+    .container p { padding: 0 30px; }
+    .container h1 {
+        font-family: "Protest Guerrilla", sans-serif;
+        text-align: left;
+        font-size: 2rem;
+        margin: 50px;
+    }
+    .container h1 span { font-size: 2.5em; }
+    .container .title p {
+        width: 50%;
+        padding: 0 50px;
+        margin: 0;
+        text-align: left;
+    }
+    .container .title h1 {
+        font-family: "Protest Guerrilla", sans-serif;
+        text-align: left;
+        font-size: 2rem;
+        margin: 50px;
+    }
+    .container article {
+        margin: 50px;
+        column-count: 3;
+        column-gap: 50px;
+    }
+    .container article h1 { margin: 0; }
+    .container article p {
+        padding: 0;
+        margin: 0;
+    }
+    .container .pics {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+            'pic1 pic1 pic2 pic3'
+            'pic1 pic1 pic4 pic5';
+    }
+    .container .pics .big-pic { display: block; }
+    .container .pics img {
+        width: 100%;
+        height: auto;
+    }
+    .container .about {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: end;
+        justify-content: center;
+        margin: 30px;
+    }
+    .container .about .author-img {
+        margin: 0;
+        width: 200px;
+        height: 200px;
+    }
+    .container .about .author-img img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    .container .about .about-container {
+        width: 50vw;
+        margin: 30px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .container .about .about-container h1 { margin: 0; padding: 0; }
+    .container .about .about-container p {
+        margin: 0px;
+        padding: 0 30px;
+    }
+    .container footer { padding: 50px; }
+}
